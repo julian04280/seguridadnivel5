@@ -33,7 +33,7 @@ export default function FashionPage() {
 
       <main className="bg-white">
         {/* SECCIÓN NOSOTROS - Estilo Ejecutivo */}
-        <section id="nosotros" className="py-32 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+        <section id="nosotros" className="overflow-x-hidden py-32 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative group">
             <div className="absolute -inset-4 bg-[#e91e63]/10 rounded-[3rem] -rotate-3 transition-transform group-hover:rotate-0" />
             <div className="relative aspect-square shadow-2xl rounded-[2.5rem] overflow-hidden">
@@ -46,17 +46,18 @@ export default function FashionPage() {
             </div>
           </div>
           
-          <div className="space-y-8">
-            <div className="inline-block px-4 py-1.5 bg-slate-100 text-[#e91e63] rounded-full text-sm font-bold tracking-widest uppercase">
+          <div className="space-y-8">            
+            <div className="inline-block px-3 py-1 lg:px-4 lg:py-1.5 bg-slate-100 text-[#e91e63] rounded-full text-[10px] lg:text-sm font-bold tracking-widest uppercase">
               Trayectoria Comprobada
             </div>
-            <h2 className="text-6xl font-black text-slate-900 leading-tight">
-              EVOLUCIONAMOS <br/><span className="text-[#e91e63]">PARA PROTEGER</span>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight uppercase">
+              EVOLUCIONAMOS <br/>
+              <span className="text-[#e91e63]">PARA PROTEGER</span>
             </h2>
-            <p className="text-xl text-slate-600 leading-relaxed font-light italic">
+            <p className="text-base lg:text-xl text-slate-600 leading-relaxed font-light italic">
               "En Seguridad Nivel 5 no solo vigilamos, anticipamos el riesgo mediante inteligencia y tecnología avanzada."
             </p>
-            <p className="text-lg text-slate-500">
+            <p className="text-sm lg:text-lg text-slate-500 leading-relaxed">
               Somos una empresa colombiana líder en seguridad consultiva, enfocada en brindar tranquilidad a través de procesos rigurosos y personal de élite.
             </p>
             {/* <button className="bg-slate-900 text-white px-12 py-5 rounded-2xl font-bold hover:bg-[#e91e63] transition-all shadow-xl hover:-translate-y-1">
@@ -146,6 +147,19 @@ export default function FashionPage() {
                 Enviar Protocolo
               </button>
             </form>
+          </div>
+          <div className="border-t border-slate-100 mt-12 py-6">
+            <p className="text-center text-[10px] tracking-widest text-slate-400 uppercase">
+              Desarrollado con precisión por{' '}
+              <a 
+                href="https://dojasoft.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-bold text-slate-500 hover:text-[#e91e63] transition-colors duration-300"
+              >
+                @Dojasoft
+              </a>
+            </p>
           </div>
         </footer>
       </main>
