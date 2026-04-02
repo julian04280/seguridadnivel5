@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, FormEvent, ChangeEvent } from "react";
+import { useState, ChangeEvent, useRef } from "react";
 import Image from "next/image";
 import Navbar from "./Navbar";
 import MasterBanner from "./MasterBanner";
+import emailjs from '@emailjs/browser';
 
 // Constantes de contenido específicas para Nivel 5
 const datosServicios = [
@@ -12,13 +13,43 @@ const datosServicios = [
   { title: "Consultoría de Riesgos", icon: "/assets/images/5.jpeg", desc: "Análisis experto para identificar vulnerabilidades y diseñar protocolos de reacción inmediata.", url: "https://www.youtube.com/embed/t_EmOmrZPmM" },
 ];
 
-export default function FashionPage() {
+export default function Page() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
+
+  const [showModal, setShowModal] = useState(false);
+  
+  const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+  const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+  const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formRef.current) return;
+
+    // Sustituye con tus IDs reales de EmailJS
+    emailjs.sendForm(
+      serviceID, 
+      templateID, 
+      formRef.current, 
+      publicKey
+    )
+    .then(() => {
+        setShowModal(true);
+        setFormData({ name: '', email: '', message: '' });
+    })
+    .catch((error) => {
+        alert('Error al enviar. Por favor intente de nuevo.');
+        console.error('EmailJS Error:', error);
+    });
+  };
+
+  const formRef = useRef<HTMLFormElement>(null);
 
   return (
     <div className="selection:bg-[#e91e63] selection:text-white">
@@ -131,19 +162,53 @@ export default function FashionPage() {
                 </div>
                 <div className="space-y-4">
                   <h4 className="text-[#e91e63] font-black uppercase tracking-widest text-sm">Emergencias 24/7</h4>
-                  <p className="text-2xl font-bold">+57 312 335 2230</p>
+                  <p className="text-2xl font-bold">+57 3208539820</p>
                 </div>
               </div>
             </div>
 
-            <form className="bg-white/5 p-10 rounded-[2.5rem] border border-white/10 space-y-6">
+            <form 
+              ref={formRef} 
+              onSubmit={sendEmail} 
+              className="bg-white/5 p-10 rounded-[2.5rem] border border-white/10 space-y-6"
+            >
               <h3 className="text-2xl font-bold mb-4">Solicitud de Seguridad Privada</h3>
+              
               <div className="grid md:grid-cols-2 gap-4">
-                <input name="name" placeholder="Nombre" className="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-[#e91e63] transition-all" value={formData.name} onChange={handleChange} />
-                <input name="email" placeholder="Email Corporativo" className="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-[#e91e63] transition-all" value={formData.email} onChange={handleChange} />
+                <input 
+                  required
+                  name="name" 
+                  type="text"
+                  placeholder="Nombre" 
+                  className="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-[#e91e63] transition-all" 
+                  value={formData.name} 
+                  onChange={handleChange} 
+                />
+                <input 
+                  required
+                  name="email" 
+                  type="email"
+                  placeholder="Email Corporativo" 
+                  className="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-[#e91e63] transition-all" 
+                  value={formData.email} 
+                  onChange={handleChange} 
+                />
               </div>
-              <textarea name="message" placeholder="Describa su requerimiento o sector..." rows={4} className="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-[#e91e63] transition-all" value={formData.message} onChange={handleChange} />
-              <button type="submit" className="w-full bg-[#e91e63] py-5 rounded-2xl font-black text-lg uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all">
+
+              <textarea 
+                required
+                name="message" 
+                placeholder="Describa su requerimiento o sector..." 
+                rows={4} 
+                className="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-[#e91e63] transition-all" 
+                value={formData.message} 
+                onChange={handleChange} 
+              />
+
+              <button 
+                type="submit" 
+                className="w-full bg-[#e91e63] py-5 rounded-2xl font-black text-lg uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all"
+              >
                 Enviar Protocolo
               </button>
             </form>
@@ -163,6 +228,31 @@ export default function FashionPage() {
           </div>
         </footer>
       </main>
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <div className="bg-[#1a1a1a] border border-white/10 p-8 rounded-[2rem] max-w-sm w-full text-center shadow-2xl animate-in fade-in zoom-in duration-300">
+            
+            {/* Icono de Check */}
+            <div className="w-20 h-20 bg-[#e91e63]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg className="w-10 h-10 text-[#e91e63]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+
+            <h3 className="text-2xl font-bold text-white mb-2">¡Protocolo Enviado!</h3>
+            <p className="text-gray-400 mb-8">
+              Hemos recibido su solicitud. Un consultor de Seguridad Nivel 5 se pondrá en contacto pronto.
+            </p>
+
+            <button 
+              onClick={() => setShowModal(false)}
+              className="w-full bg-[#e91e63] py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all"
+            >
+              Entendido
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

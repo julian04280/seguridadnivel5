@@ -48,7 +48,7 @@ const MasterBanner: React.FC<MasterBannerProps> = ({
               {/* Botón de Acción */}
               <div className="pt-4">
                 <button
-                  onClick={() => window.open('https://wa.me/3123352230', '_blank', 'noopener,noreferrer')} 
+                  onClick={() => window.open('https://wa.me/3208539820', '_blank', 'noopener,noreferrer')} 
                   className={`
                     px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all
                     active:scale-95 shadow-lg
