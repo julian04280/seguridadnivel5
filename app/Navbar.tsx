@@ -47,7 +47,7 @@ const Navbar = () => {
             <Link
               key={link.name}
               href={link.href}
-              className={`font-bold text-sm uppercase tracking-wider transition-colors hover:text-[#e91e63] ${
+              className={`font-bold text-sm uppercase tracking-wider transition-colors hover:text-[#fed518] ${
                 scrolled ? "text-slate-800" : "text-black"
               }`}
             >
@@ -56,7 +56,7 @@ const Navbar = () => {
           ))}
           <Link
             href="#footer"
-            className="bg-[#e91e63] text-white px-6 py-2.5 rounded-full font-bold text-sm uppercase transition-all hover:bg-[#c2185b] hover:shadow-lg active:scale-95"
+            className="bg-[#fed518] text-white px-6 py-2.5 rounded-full font-bold text-sm uppercase transition-all hover:bg-[#b39613] hover:shadow-lg active:scale-95"
           >
             Contáctanos
           </Link>

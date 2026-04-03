@@ -4,12 +4,13 @@ import { useState, ChangeEvent, useRef } from "react";
 import Image from "next/image";
 import Navbar from "./Navbar";
 import MasterBanner from "./MasterBanner";
+import OperationSlider from "./Slider";
 import emailjs from '@emailjs/browser';
 
 // Constantes de contenido específicas para Nivel 5
 const datosServicios = [
-  { title: "Seguridad Física", icon: "/assets/images/3.jpeg", desc: "Personal altamente capacitado y evaluado con estándares de confianza para la protección de activos críticos.", url: "https://www.youtube.com/embed/t_EmOmrZPmM" },
-  { title: "Sistemas Electrónicos", icon: "/assets/images/4.jpeg", desc: "CCTV, control de acceso y alarmas inteligentes monitoreadas 24/7 desde nuestra central propia.", url: "https://www.youtube.com/embed/t_EmOmrZPmM" },
+  { title: "Seguridad Física", icon: "/assets/images/4.jpeg", desc: "Personal altamente capacitado y evaluado con estándares de confianza para la protección de activos críticos.", url: "https://www.youtube.com/embed/t_EmOmrZPmM" },
+  { title: "Sistemas Electrónicos", icon: "/assets/images/3.jpeg", desc: "CCTV, control de acceso y alarmas inteligentes monitoreadas 24/7 desde nuestra central propia.", url: "https://www.youtube.com/embed/t_EmOmrZPmM" },
   { title: "Consultoría de Riesgos", icon: "/assets/images/5.jpeg", desc: "Análisis experto para identificar vulnerabilidades y diseñar protocolos de reacción inmediata.", url: "https://www.youtube.com/embed/t_EmOmrZPmM" },
 ];
 
@@ -22,7 +23,7 @@ export default function Page() {
   };
 
   const [showModal, setShowModal] = useState(false);
-  
+
   const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
   const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
   const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
@@ -66,24 +67,24 @@ export default function Page() {
         {/* SECCIÓN NOSOTROS - Estilo Ejecutivo */}
         <section id="nosotros" className="overflow-x-hidden py-32 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative group">
-            <div className="absolute -inset-4 bg-[#e91e63]/10 rounded-[3rem] -rotate-3 transition-transform group-hover:rotate-0" />
+            <div className="absolute -inset-4 bg-[#fed518]/10 rounded-[3rem] -rotate-3 transition-transform group-hover:rotate-0" />
             <div className="relative aspect-square shadow-2xl rounded-[2.5rem] overflow-hidden">
               <Image 
                 src="/assets/images/2.jpeg" 
                 alt="Operaciones Nivel 5" 
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                className="object-cover transition-transform duration-700 group-hover:scale-100"
               />
             </div>
           </div>
           
           <div className="space-y-8">            
-            <div className="inline-block px-3 py-1 lg:px-4 lg:py-1.5 bg-slate-100 text-[#e91e63] rounded-full text-[10px] lg:text-sm font-bold tracking-widest uppercase">
+            <div className="inline-block px-3 py-1 lg:px-4 lg:py-1.5 bg-slate-100 text-[#fed518] rounded-full text-[10px] lg:text-sm font-bold tracking-widest uppercase">
               Trayectoria Comprobada
             </div>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight uppercase">
               EVOLUCIONAMOS <br/>
-              <span className="text-[#e91e63]">PARA PROTEGER</span>
+              <span className="text-[#fed518]">PARA PROTEGER</span>
             </h2>
             <p className="text-base lg:text-xl text-slate-600 leading-relaxed font-light italic">
               "En Seguridad Nivel 5 no solo vigilamos, anticipamos el riesgo mediante inteligencia y tecnología avanzada."
@@ -116,8 +117,8 @@ export default function Page() {
                   <div className="relative w-80 h-50 mb-10">
                     <Image src={service.icon} alt={service.title} fill className="object-contain" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-slate-900">{service.title}</h3>
-                  <p className="text-slate-500 leading-relaxed mb-8">{service.desc}</p>
+                  <h3 className="text-2xl font-bold mb-4 text-slate-900 text-left">{service.title}</h3>
+                  <p className="text-slate-500 leading-relaxed mb-8 text-left">{service.desc}</p>
                   {/* <button className="flex items-center gap-2 text-[#e91e63] font-black group-hover:gap-4 transition-all">
                     ESPECIFICACIONES <span className="text-xl">→</span>
                   </button> */}
@@ -134,20 +135,7 @@ export default function Page() {
             <p className="text-slate-500 mt-4">Únete al equipo que está redefiniendo la seguridad en Colombia.</p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 h-[600px]">
-            <div className="relative col-span-2 row-span-2 rounded-3xl overflow-hidden group">
-              <Image src="/assets/images/6.jpeg" alt="Op" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-            </div>
-            <div className="relative rounded-3xl overflow-hidden group">
-              <Image src="/assets/images/7.jpeg" alt="Op" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-            </div>
-            <div className="relative rounded-3xl overflow-hidden group">
-              <Image src="/assets/images/8.jpeg" alt="Op" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-            </div>
-            <div className="relative col-span-2 rounded-3xl overflow-hidden group">
-              <Image src="/assets/images/9.jpeg" alt="Op" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-            </div>
-          </div>
+          <OperationSlider/>
         </section>
 
         {/* FOOTER - Estilo Black Ops */}
@@ -157,15 +145,68 @@ export default function Page() {
               <Image src="/assets/images/logo.png" alt="SN5" width={280} height={100} className="brightness-200" />
               <div className="grid sm:grid-cols-2 gap-12">
                 <div className="space-y-4">
-                  <h4 className="text-[#e91e63] font-black uppercase tracking-widest text-sm">Sede Central</h4>
+                  <h4 className="text-[#fed518] font-black uppercase tracking-widest text-sm">Sede Central</h4>
                   <p className="text-slate-400">Bogotá - Chía, Colombia</p>
                 </div>
                 <div className="space-y-4">
-                  <h4 className="text-[#e91e63] font-black uppercase tracking-widest text-sm">Emergencias 24/7</h4>
+                  <h4 className="text-[#fed518] font-black uppercase tracking-widest text-sm">Emergencias 24/7</h4>
                   <p className="text-2xl font-bold">+57 3208539820</p>
                 </div>
               </div>
+              <div className="space-y-6 pt-8 border-t border-white/10">
+                <h4 className="text-[#fed518] font-black uppercase tracking-widest text-sm">Conecta con nosotros</h4>
+                <div className="flex items-center gap-6">
+                  {/* Facebook */}
+                  <a 
+                    href="https://facebook.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group transition-transform hover:scale-110"
+                  >
+                    <Image 
+                      src="/assets/images/facebook.png" 
+                      alt="Facebook" 
+                      width={42} 
+                      height={42} 
+                      className="opacity-80 group-hover:opacity-100 transition-opacity"
+                    />
+                  </a>
+
+                  {/* Instagram */}
+                  <a 
+                    href="https://instagram.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group transition-transform hover:scale-110"
+                  >
+                    <Image 
+                      src="/assets/images/instagram.png" 
+                      alt="Instagram" 
+                      width={42} 
+                      height={42} 
+                      className="opacity-80 group-hover:opacity-100 transition-opacity"
+                    />
+                  </a>
+
+                  {/* WhatsApp */}
+                  <a 
+                    href="https://wa.me/573208539820" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group transition-transform hover:scale-110"
+                  >
+                    <Image 
+                      src="/assets/images/whatsapp.png" 
+                      alt="WhatsApp" 
+                      width={42} 
+                      height={42} 
+                      className="opacity-80 group-hover:opacity-100 transition-opacity"
+                    />
+                  </a>
+                </div>
+              </div>
             </div>
+    
 
             <form 
               ref={formRef} 
@@ -207,9 +248,9 @@ export default function Page() {
 
               <button 
                 type="submit" 
-                className="w-full bg-[#e91e63] py-5 rounded-2xl font-black text-lg uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all"
+                className="w-full bg-[#fed518] py-5 rounded-2xl font-black text-lg uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all"
               >
-                Enviar Protocolo
+                Enviar
               </button>
             </form>
           </div>
@@ -232,21 +273,20 @@ export default function Page() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
           <div className="bg-[#1a1a1a] border border-white/10 p-8 rounded-[2rem] max-w-sm w-full text-center shadow-2xl animate-in fade-in zoom-in duration-300">
             
-            {/* Icono de Check */}
             <div className="w-20 h-20 bg-[#e91e63]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <svg className="w-10 h-10 text-[#e91e63]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-10 h-10 text-[#fed518]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
               </svg>
             </div>
 
-            <h3 className="text-2xl font-bold text-white mb-2">¡Protocolo Enviado!</h3>
+            <h3 className="text-2xl font-bold text-white mb-2">¡Mensaje Enviado!</h3>
             <p className="text-gray-400 mb-8">
               Hemos recibido su solicitud. Un consultor de Seguridad Nivel 5 se pondrá en contacto pronto.
             </p>
 
             <button 
               onClick={() => setShowModal(false)}
-              className="w-full bg-[#e91e63] py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all"
+              className="w-full bg-[#fed518] py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all"
             >
               Entendido
             </button>
