@@ -1,0 +1,16 @@
+# Dependencias (las más pesadas)
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Entorno y logs
+.env*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistema operativo
+.DS_Store
+*.local

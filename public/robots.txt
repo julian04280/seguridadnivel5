@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.gruponivel5.com
+
+# Sitemaps
+Sitemap: https://www.gruponivel5.com/sitemap.xml
