@@ -269,14 +269,14 @@ const Fashion = () => {
               <Col lg="4" md="12" className="mb-4 mb-lg-0">
                 <div className="footer-logo mb-4">
                   <img 
-                    src="/assets/images/icon/GN5.png" 
+                    src="/assets/images/icon/logo-blanco.png" 
                     alt="GN5 Logo" 
                     style={{ maxWidth: "200px" }} 
                   />
                 </div>
                 
                 <div className="contact-info">
-                  <h5 className="fw-bold mb-3" style={{ color: "white"}}>Contactanos</h5>
+                  <h5 className="fw-bold mb-3 ml-3" style={{ color: "white"}}>Contactanos</h5>
                   <p className="mb-2" style={{ color: "white"}}>
                     <i className="ri-whatsapp-line me-2" ></i> +57 3203162423 - +57 3208539820
                   </p>

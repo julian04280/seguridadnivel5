@@ -17,7 +17,7 @@ const NavbarGN5 = () => {
       style={{ background: 'rgba(0,0,0,0.3)', backdropFilter: 'blur(5px)' }}
     >
       <Container>
-        <LogoImage logo={"GN5.png"} />
+        <LogoImage logo={"logo-blanco.png"} />
         
         {/* 3. El botón de "hamburguesa" que aparece en móviles */}
         <NavbarToggler onClick={toggle} />
