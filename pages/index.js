@@ -107,7 +107,7 @@ const Fashion = () => {
               {/* Columna del Texto */}
               <Col md="6" className="ps-md-5">
                 <div className="content">
-                  <h2 className="subtitulosMontserratNegra">Quienes somos</h2>
+                  <h2 className="subtitulosMontserratNegra mt-5">Quienes somos</h2>
                   <hr style={{ width: "50px", borderTop: "3px solid #000", opacity: 1 }} />
                   
                   <p className="mt-4 text-secondary textoMontserrat">
