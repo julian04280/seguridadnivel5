@@ -14,7 +14,7 @@ const MasterBanner = ({ img, title, desc, link, classes, btn, btnClass }) => {
                   <h1 className="titulosExtraBold mb-4">{desc}</h1>
                   
                   <button
-                    onClick={() => window.open('https://wa.me/3123352230', '_blank', 'noopener,noreferrer')} 
+                    onClick={() => window.open('https://wa.me/3203162423', '_blank', 'noopener,noreferrer')} 
                     className={`subtitulosMontserrat btn ${btnClass ? btnClass : "btn-solid"}`}
                     style={{ border: 'none' }} // Para que parezca un botón de diseño
                   >

@@ -27,21 +27,19 @@ const Fashion = () => {
   };
 
   const datosServicios = [
-    { title: "Alarmas", icon: "/assets/images/collection/ALARMAS-GN5.png", desc: "Protege tu hogar o negocio con sistemas de alarmas inteligentes que detectan intrusiones y activan respuesta inmediata. Seguridad 24/7 para prevenir riesgos y proteger lo que más importa.", url: "https://www.youtube.com/embed/t_EmOmrZPmM" },
-    { title: "Automatización de puertas", icon: "/assets/images/collection/AUTOMATIZACION-PUERTAS-GN5.png", desc: "Controla accesos vehiculares y peatonales con puertas automáticas seguras y confiables. Mejora la seguridad, comodidad y control en conjuntos residenciales y empresas", url: "https://www.youtube.com/embed/ubozlxHW7QI" },
-    { title: "Cámaras de seguridad", icon: "/assets/images/collection/CAMARAS-SEGURIDAD-GN5.png", desc: "Vigila tus espacios en tiempo real con sistemas CCTV de alta calidad. Obtén grabaciones claras y control total para prevenir incidentes y proteger tu propiedad..", url: "https://www.youtube.com/embed/Muxo9OqBcBQ" },
-    { title: "Monitoreo virtual (app)", icon: "/assets/images/collection/Mesa de trabajo 9.png", desc: "Activa alertas de emergencia y comparte tu ubicación en tiempo real con nuestro sistema de monitoreo virtual y botón de pánico inteligente desde tu celular.", url: "https://www.youtube.com/embed/4TdMRkrAjhc" },
-    { title: "Seguridad física", icon: "/assets/images/collection/SEGURIDAD-FISICA-GN5.png", desc: "Servicio profesional de vigilancia y control de accesos con personal capacitado y protocolos operativos que garantizan protección y tranquilidad permanente.", url: "https://www.youtube.com/embed/NildzO0d3NM" },
-    { title: "Servicios generales", icon: "/assets/images/collection/SERVICIOS-GENERALES-GN5.png", desc: "Soluciones integrales de consejería, aseo y mantenimiento para espacios residenciales y corporativos, asegurando orden, higiene y ambientes adecuados.", url: "https://www.youtube.com/embed/ClE_608DYkg" },
+    { title: "Alarmas", icon: "/assets/images/collection/ALARMAS.svg", desc: "Protege tu hogar o negocio con sistemas de alarmas inteligentes que detectan intrusiones y activan respuesta inmediata. Seguridad 24/7 para prevenir riesgos y proteger lo que más importa.", url: "https://www.youtube.com/embed/t_EmOmrZPmM" },
+    { title: "Cámaras de seguridad", icon: "/assets/images/collection/CAMARAS.svg", desc: "Vigila tus espacios en tiempo real con sistemas CCTV de alta calidad. Obtén grabaciones claras y control total para prevenir incidentes y proteger tu propiedad..", url: "https://www.youtube.com/embed/Muxo9OqBcBQ" },
+    { title: "Monitoreo virtual (app)", icon: "/assets/images/collection/Cel APP.svg", desc: "Activa alertas de emergencia y comparte tu ubicación en tiempo real con nuestro sistema de monitoreo virtual y botón de pánico inteligente desde tu celular.", url: "https://www.youtube.com/embed/4TdMRkrAjhc" },
+    { title: "Seguridad física", icon: "/assets/images/collection/SEGURIDAD-FISICA.svg", desc: "Servicio profesional de vigilancia y control de accesos con personal capacitado y protocolos operativos que garantizan protección y tranquilidad permanente.", url: "https://www.youtube.com/embed/NildzO0d3NM" },
   ];
 
   const stats = [
     { 
-      num: "+120", 
+      num: "+2000", 
       text: "clientes empresariales y residenciales atendidos satisfactoriamente" 
     },
     { 
-      num: "+18", 
+      num: "15", 
       text: "años de experiencia en el mercado de la seguridad privada y electrónica" 
     },
     { 
@@ -98,7 +96,7 @@ const Fashion = () => {
               <Col md="6">
                 <div className="image-container">
                   <img 
-                    src="/assets/images/about/NOSOTROS-SEGURIDAD-GN5.png" 
+                    src="/assets/images/about/21.png" 
                     alt="Seguridad" 
                     className="img-fluid rounded-4 shadow-lg"
                     style={{ borderRadius: "20px" }}
@@ -113,19 +111,19 @@ const Fashion = () => {
                   <hr style={{ width: "50px", borderTop: "3px solid #000", opacity: 1 }} />
                   
                   <p className="mt-4 text-secondary textoMontserrat">
-                    Somos una empresa colombiana con trayectoria comprobada en seguridad física, electrónica y consultiva.
+                    Somos una empresa especializada en monitoreo 24/7, seguridad física y rastreo vehicular, enfocada en la protección activa de personas, bienes y activos en movimiento.
                   </p>
                   <p className="text-secondary textoMontserrat">
-                    Nacimos como Seguridades Activas y evolucionamos hacia Grupo Nivel 5 para consolidar lo mejor de nuestra historia con las nuevas oportunidades del mundo digital.
+                    Integramos tecnología de localización en tiempo real con personal capacitado en terreno, lo que nos permite prevenir, reaccionar y actuar de forma inmediata ante cualquier situación.
                   </p>
                   <p className="text-secondary textoMontserrat">
-                    Nuestro equipo técnico, humano y estratégico trabaja con pasión por proteger lo que valoras, con soluciones hechas a tu medida.
+                    Nuestro compromiso es claro: brindarte control total, visibilidad constante y una respuesta efectiva cuando más lo necesitas.
                   </p>
 
                   {/* Botón que activa el Pop Up */}
                   <div className="mt-4 titulosMontserrat">
                     <button 
-                      onClick={() => window.open('https://wa.me/3123352230', '_blank', 'noopener,noreferrer')}
+                      onClick={() => window.open('https://wa.me/3203162423', '_blank', 'noopener,noreferrer')}
                       style={{ 
                         backgroundColor: "#fbd317", 
                         border: "none", 
@@ -173,7 +171,7 @@ const Fashion = () => {
 
             <Row>
               {datosServicios.map((item, index) => (
-                <Col lg="4" md="6" className="mb-4" key={index}>
+                <Col lg="6" md="6" className="mb-4" key={index}>
                   <Card className="text-center border-1 h-100 shadow-sm" style={{ padding: "20px" }}>
                     <CardBody>
                       {/* Icono (puedes usar iconos de RemixIcon o FontAwesome) */}
@@ -211,7 +209,7 @@ const Fashion = () => {
               <Button 
                 size="lg" 
                 style={{ backgroundColor: "#fbd317", border: "none", borderRadius: "25px", padding: "12px 40px" }}
-                onClick={() => window.open('https://wa.me/3123352230', '_blank', 'noopener,noreferrer')}
+                onClick={() => window.open('https://wa.me/3203162423', '_blank', 'noopener,noreferrer')}
               >
                 Cotiza ahora
               </Button>
@@ -221,7 +219,7 @@ const Fashion = () => {
       </div>
 
       <div>
-        <section id="trabaja" className="trabaje-nosotros-section" 
+        <section id="trabaja" className="trabaje-nosotros-section pt-5" 
           style={{ 
             backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('/assets/images/CONTACTO-SEGURIDAD-GN5.png')`, 
             backgroundSize: 'cover',
@@ -253,7 +251,7 @@ const Fashion = () => {
                     fontWeight: "bold",
                     boxShadow: "0px 4px 15px rgba(49, 31, 37, 0.3)"
                   }}
-                   onClick={() => window.open('https://wa.me/3123352230', '_blank', 'noopener,noreferrer')}
+                   onClick={() => window.open('https://wa.me/3203162423', '_blank', 'noopener,noreferrer')}
                 >
                   Pregunta como
                 </Button>
@@ -280,10 +278,10 @@ const Fashion = () => {
                 <div className="contact-info">
                   <h5 className="fw-bold mb-3" style={{ color: "white"}}>Contactanos</h5>
                   <p className="mb-2" style={{ color: "white"}}>
-                    <i className="ri-whatsapp-line me-2" ></i> +57 3XX XXX XXXX
+                    <i className="ri-whatsapp-line me-2" ></i> +57 3203162423 - +57 3208539820
                   </p>
                   <p style={{ color: "white"}}>
-                    <i className="ri-mail-line me-2"></i> XXXXXX@XXXXXX.XXX
+                    <i className="ri-mail-line me-2"></i> cotizacion.seguridadnivel5@gmail.com
                   </p>
                 </div>
               </Col>
@@ -299,14 +297,14 @@ const Fashion = () => {
                       style={{ maxWidth: "20px" }} 
                     />
                   </a>
-                  <a href=" https://www.instagram.com/seguridadgn5/" className="text-white">
+                  <a href="https://www.instagram.com/seguridad_nivel5/" className="text-white">
                     <img 
                       src="/assets/images/icon/INSTAGRAM-GN5.png" 
                       alt="icon instagram" 
                       style={{ maxWidth: "20px" }} 
                     />
                   </a>
-                  <a href="https://api.whatsapp.com/send/?phone=3159638912&text&type=phone_number&app_absent=0" className="text-white">
+                  <a href="https://api.whatsapp.com/send/?phone=3203162423&text&type=phone_number&app_absent=0" className="text-white">
                     <img 
                       src="/assets/images/icon/WHATSAPP-GN5-.png" 
                       alt="icon whatsapp" 

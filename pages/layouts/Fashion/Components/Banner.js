@@ -7,8 +7,8 @@ import MasterBanner from "./MasterBanner";
 const Data = [
   {
     img: "home1",
-    title: "Toda tu seguridad es un solo lugar.",
-    desc: "Humana, tecnológica y en tiempo real.",
+    title: "Monitoreo inteligente y respuesta inmediata",
+    desc: "Vigilancia física y tecnológica activa las 24 horas.",
     link: "/left-sidebar/collection ",
   }
 ];
