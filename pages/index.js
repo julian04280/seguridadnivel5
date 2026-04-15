@@ -123,7 +123,7 @@ const Fashion = () => {
                   {/* Botón que activa el Pop Up */}
                   <div className="mt-4 titulosMontserrat">
                     <button 
-                      onClick={() => window.open('https://wa.me/3203162423', '_blank', 'noopener,noreferrer')}
+                      onClick={() => window.open('https://wa.me/573203162423', '_blank', 'noopener,noreferrer')}
                       style={{ 
                         backgroundColor: "#fbd317", 
                         border: "none", 
@@ -209,7 +209,7 @@ const Fashion = () => {
               <Button 
                 size="lg" 
                 style={{ backgroundColor: "#fbd317", border: "none", borderRadius: "25px", padding: "12px 40px" }}
-                onClick={() => window.open('https://wa.me/3203162423', '_blank', 'noopener,noreferrer')}
+                onClick={() => window.open('https://wa.me/573203162423', '_blank', 'noopener,noreferrer')}
               >
                 Cotiza ahora
               </Button>
@@ -251,7 +251,7 @@ const Fashion = () => {
                     fontWeight: "bold",
                     boxShadow: "0px 4px 15px rgba(49, 31, 37, 0.3)"
                   }}
-                   onClick={() => window.open('https://wa.me/3203162423', '_blank', 'noopener,noreferrer')}
+                   onClick={() => window.open('https://wa.me/573203162423', '_blank', 'noopener,noreferrer')}
                 >
                   Pregunta como
                 </Button>
