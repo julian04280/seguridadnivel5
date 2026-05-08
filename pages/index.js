@@ -96,9 +96,9 @@ const Fashion = () => {
               <Col md="6">
                 <div className="image-container">
                   <img 
-                    src="/assets/images/about/21.png" 
+                    src="/assets/images/about/SGTO.jpeg" 
                     alt="Seguridad" 
-                    className="img-fluid rounded-4 shadow-lg"
+                    className="img-fluid w-100 rounded-4 shadow-lg"
                     style={{ borderRadius: "20px" }}
                   />
                 </div>
@@ -185,7 +185,7 @@ const Fashion = () => {
                       </div>
                       <h4 className="fw-bold">{item.title}</h4>
                       <p className="text-muted small mt-4">{item.desc}</p>
-                      <button 
+                      {/* <button 
                         onClick={() => abrirModalConVideo(item.url)}
                         style={{ 
                           backgroundColor: "#fbd317", 
@@ -197,7 +197,7 @@ const Fashion = () => {
                         }}
                       >
                         Ver Video
-                      </button>
+                      </button> */}
                     </CardBody>
                   </Card>
                 </Col>
