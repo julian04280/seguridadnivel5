@@ -49,7 +49,7 @@ body {
   font-family: $font_0, $font_1;
   position: relative;
   background: $white;
-  font-size: 15px;
+  font-size: 17px;
   overflow-x: hidden;
   letter-spacing: 0.8px;
   .christmas{
@@ -69,46 +69,46 @@ body {
   }
 }
 h1 {
-  font-size: 61px;
+  font-size: 72px;
   color: $dark-font;
   font-weight: 700;
   text-transform: uppercase;
   span {
-    font-size: 108px;
+    font-size: 115px;
     font-weight: 700;
     color: var(--theme-deafult);
   }
 }
 h2 {
-  font-size: 37px;
+  font-size: 42px;
   color: $dark-font;
   text-transform: uppercase;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.1;
   letter-spacing: 0.02em;
 }
 h3 {
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 400;
   color: $grey;
   letter-spacing: 0.03em;
 }
 h4 {
-  font-size: 19px;
+  font-size: 22px;
   text-transform: capitalize;
   font-weight: 400;
   letter-spacing: 0.03em;
-  line-height: 1;
+  line-height: 1.2;
 }
 h5 {
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 400;
   color: $dark-font;
-  line-height: 24px;
+  line-height: 26px;
   letter-spacing: 0.05em;
 }
 h6 {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 400;
   color: $grey;
   line-height: 24px;
@@ -14464,24 +14464,28 @@ $weight-extra-bold: 800;
   font-weight: $weight-regular; // Peso regular para texto normal
   color: #555555;
   line-height: 1.6;
+  font-size: 18px;
 }
 .subtitulosMontserrat {
   font-family: $font-main;
   font-weight: $weight-bold; // Usamos el peso bold para subtítulos
   color: #ffffff;
   margin-bottom: 15px;
+  font-size: 28px;
 }
 .subtitulosMontserratNegra {
   font-family: $font-main;
   font-weight: $weight-bold; // Usamos el peso bold para subtítulos
   color: #000000;
   margin-bottom: 15px;
+  font-size: 28px;
 }
 .titulosMontserrat {
   font-family: $font-main;
   font-weight: $weight-extra-bold; // Peso extra bold para títulos principales
   color: #222222;
   margin-bottom: 20px;
+  font-size: 46px;
 }
 .titulosExtraBold {
   font-family: $font-main;
