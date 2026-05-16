@@ -49,7 +49,7 @@ body {
   font-family: $font_0, $font_1;
   position: relative;
   background: $white;
-  font-size: 14px;
+  font-size: 15px;
   overflow-x: hidden;
   letter-spacing: 0.8px;
   .christmas{
@@ -69,18 +69,18 @@ body {
   }
 }
 h1 {
-  font-size: 60px;
+  font-size: 61px;
   color: $dark-font;
   font-weight: 700;
   text-transform: uppercase;
   span {
-    font-size: 107px;
+    font-size: 108px;
     font-weight: 700;
     color: var(--theme-deafult);
   }
 }
 h2 {
-  font-size: 36px;
+  font-size: 37px;
   color: $dark-font;
   text-transform: uppercase;
   font-weight: 700;
@@ -88,27 +88,27 @@ h2 {
   letter-spacing: 0.02em;
 }
 h3 {
-  font-size: 24px;
+  font-size: 25px;
   font-weight: 400;
   color: $grey;
   letter-spacing: 0.03em;
 }
 h4 {
-  font-size: 18px;
+  font-size: 19px;
   text-transform: capitalize;
   font-weight: 400;
   letter-spacing: 0.03em;
   line-height: 1;
 }
 h5 {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 400;
   color: $dark-font;
   line-height: 24px;
   letter-spacing: 0.05em;
 }
 h6 {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   color: $grey;
   line-height: 24px;
