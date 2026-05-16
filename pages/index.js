@@ -1,6 +1,7 @@
 import React,{ useState } from "react";
 import Banner from "./layouts/Fashion/Components/Banner";
 import NavbarGN5 from "../pages/Gn5/NavbarGN5";
+import RecursosSlider from "../components/common/RecursosSlider";
 import ModalComponent from "../components/common/Modal";
 import Helmet from "react-helmet";
 import { Container, Row, Col, Card, CardBody, Button, Form, Input, FormGroup, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
@@ -217,6 +218,8 @@ const Fashion = () => {
           </Container>
         </section>
       </div>
+
+      <RecursosSlider />
 
       <div>
         <section id="trabaja" className="trabaje-nosotros-section pt-5" 
