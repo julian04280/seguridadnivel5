@@ -59,8 +59,20 @@ const Fashion = () => {
     message: ''
   });
 
+  const [pqrData, setPqrData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    type: 'Queja',
+    message: ''
+  });
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handlePqrChange = (e) => {
+    setPqrData({ ...pqrData, [e.target.name]: e.target.value });
   };
 
   const enviarCorreo = (e) => {
@@ -76,9 +88,31 @@ const Fashion = () => {
       });
   };
 
+  const enviarPqr = (e) => {
+    e.preventDefault();
+
+    // Usando el mismo servicio y una plantilla (que el usuario deberá configurar o ajustar)
+    emailjs.send('service_4vlpaaa', 'template_miw2gy2', {
+      name: pqrData.name,
+      email: pqrData.email,
+      message: `Tipo: ${pqrData.type}\nTeléfono: ${pqrData.phone}\n\nMensaje: ${pqrData.message}`
+    }, 'wKZXLQmMaXMgFr8Kj')
+      .then((res) => {
+          setModalOpen(true);
+          setPqrData({ name: '', email: '', phone: '', type: 'Queja', message: '' });
+      })
+      .catch((err) => {
+          console.error("Error:", err);
+      });
+  };
+
   const isFormValid = formData.name.trim() !== "" && 
                     formData.email.trim() !== "" && 
                     formData.message.trim() !== "";
+
+  const isPqrValid = pqrData.name.trim() !== "" && 
+                    pqrData.email.trim() !== "" && 
+                    pqrData.message.trim() !== "";
   
   return (
     <>
@@ -115,7 +149,7 @@ const Fashion = () => {
                     Somos una empresa especializada en monitoreo 24/7, seguridad física y rastreo vehicular, enfocada en la protección activa de personas, bienes y activos en movimiento.
                   </p>
                   <p className="text-secondary textoMontserrat">
-                    Integramos tecnología de localización en tiempo real con personal capacitado en terreno, lo que nos permite prevenir, reaccionar y actuar de forma inmediata ante cualquier situación.
+                    Integramos tecnología de localización en tiempo real with personal capacitado en terreno, lo que nos permite prevenir, reaccionar y actuar de forma inmediata ante cualquier situación.
                   </p>
                   <p className="text-secondary textoMontserrat">
                     Nuestro compromiso es claro: brindarte control total, visibilidad constante y una respuesta efectiva cuando más lo necesitas.
@@ -186,19 +220,6 @@ const Fashion = () => {
                       </div>
                       <h4 className="fw-bold">{item.title}</h4>
                       <p className="text-muted small mt-4">{item.desc}</p>
-                      {/* <button 
-                        onClick={() => abrirModalConVideo(item.url)}
-                        style={{ 
-                          backgroundColor: "#fbd317", 
-                          border: "none", 
-                          borderRadius: "25px", 
-                          padding: "10px 30px",
-                          fontWeight: "bold",
-                          color: "white"
-                        }}
-                      >
-                        Ver Video
-                      </button> */}
                     </CardBody>
                   </Card>
                 </Col>
@@ -219,7 +240,145 @@ const Fashion = () => {
         </section>
       </div>
 
+      <div className="section-a-space" id="reglamento">
+        <section className="reglamento-section" style={{ padding: "80px 0", backgroundColor: "#f8f9fa" }}>
+          <Container>
+            <Row className="align-items-center text-center">
+              <Col md="12">
+                <h2 className="subtitulosMontserratNegra">Reglamento Interno de Trabajo</h2>
+                <hr style={{ width: "80px", margin: "10px auto", borderTop: "3px solid #000", opacity: 1 }} />
+                <p className="mt-4 text-secondary textoMontserrat">
+                  Consulta y descarga la actualización más reciente de nuestro reglamento interno de trabajo.
+                </p>
+                <div className="mt-4">
+                  <Button 
+                    color="primary"
+                    style={{ 
+                      backgroundColor: "#fbd317", 
+                      border: "none", 
+                      borderRadius: "25px", 
+                      padding: "12px 40px",
+                      fontWeight: "bold",
+                      color: "white"
+                    }}
+                    onClick={() => window.open('/assets/documents/REGLAMENTO INTERNO ACTUAL JUNIO 2026.pdf', '_blank')}
+                  >
+                    Descargar Reglamento
+                  </Button>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+      </div>
+
       <RecursosSlider />
+      
+      <div className="section-a-space" id="pqr">
+        <section className="pqr-section" style={{ padding: "80px 0", backgroundColor: "#fff" }}>
+          <Container>
+            <div className="title1 text-center mb-5">
+              <h2 className="subtitulosMontserratNegra">Quejas y Reclamos (PQR)</h2>
+              <hr style={{ width: "80px", margin: "10px auto", borderTop: "3px solid #000", opacity: 1 }} />
+              <p className="mt-3 text-muted textoMontserrat" style={{ maxWidth: "600px", margin: "0 auto" }}>
+                Tu opinión es muy importante para nosotros. Por favor, diligencia el siguiente formulario para procesar tu solicitud.
+              </p>
+            </div>
+
+            <Row className="justify-content-center">
+              <Col md="8">
+                <Form onSubmit={enviarPqr}>
+                  <Row>
+                    <Col md="6">
+                      <FormGroup>
+                        <Input
+                          type="text"
+                          name="name"
+                          value={pqrData.name}
+                          onChange={handlePqrChange}
+                          placeholder="Nombre completo"
+                          required
+                          style={{ borderRadius: "10px", padding: "12px", marginBottom: "15px" }}
+                        />
+                      </FormGroup>
+                    </Col>
+                    <Col md="6">
+                      <FormGroup>
+                        <Input
+                          type="email"
+                          name="email"
+                          value={pqrData.email}
+                          onChange={handlePqrChange}
+                          placeholder="Correo electrónico"
+                          required
+                          style={{ borderRadius: "10px", padding: "12px", marginBottom: "15px" }}
+                        />
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md="6">
+                      <FormGroup>
+                        <Input
+                          type="text"
+                          name="phone"
+                          value={pqrData.phone}
+                          onChange={handlePqrChange}
+                          placeholder="Teléfono de contacto"
+                          style={{ borderRadius: "10px", padding: "12px", marginBottom: "15px" }}
+                        />
+                      </FormGroup>
+                    </Col>
+                    <Col md="6">
+                      <FormGroup>
+                        <Input
+                          type="select"
+                          name="type"
+                          value={pqrData.type}
+                          onChange={handlePqrChange}
+                          style={{ borderRadius: "10px", padding: "12px", marginBottom: "15px", height: "auto" }}
+                        >
+                          <option value="Queja">Queja</option>
+                          <option value="Reclamo">Reclamo</option>
+                          <option value="Sugerencia">Sugerencia</option>
+                          <option value="Petición">Petición</option>
+                        </Input>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <FormGroup>
+                    <Input
+                      type="textarea"
+                      name="message"
+                      value={pqrData.message}
+                      onChange={handlePqrChange}
+                      placeholder="Describe tu queja o reclamo detalladamente"
+                      required
+                      style={{ borderRadius: "10px", padding: "12px", height: "150px", marginBottom: "20px" }}
+                    />
+                  </FormGroup>
+                  <div className="text-center">
+                    <Button 
+                      disabled={!isPqrValid}
+                      style={{ 
+                        backgroundColor: "#fbd317", 
+                        border: "none", 
+                        borderRadius: "25px", 
+                        padding: "12px 50px",
+                        fontWeight: "bold",
+                        color: "white"
+                      }}
+                      type="submit"
+                    >
+                      Enviar PQR
+                    </Button>
+                  </div>
+                </Form>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+      </div>
 
       <div>
         <section id="trabaja" className="trabaje-nosotros-section pt-5" 
@@ -371,10 +530,9 @@ const Fashion = () => {
                 <Modal 
                   isOpen={modalOpen} 
                   toggle={toggleModalEmail} 
-                  centered={true} // Esto lo centra verticalmente en la pantalla
-                  contentClassName="border-0 rounded-4 shadow-lg" // Quita bordes feos y da sombra
+                  centered={true}
+                  contentClassName="border-0 rounded-4 shadow-lg"
                 >
-                  {/* Header centrado y sin borde inferior */}
                   <ModalHeader 
                     toggle={toggleModalEmail} 
                     className="border-0 pb-0 d-flex justify-content-center w-100"
