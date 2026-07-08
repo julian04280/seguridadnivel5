@@ -278,7 +278,7 @@ const Fashion = () => {
         <section className="pqr-section" style={{ padding: "80px 0", backgroundColor: "#fff" }}>
           <Container>
             <div className="title1 text-center mb-5">
-              <h2 className="subtitulosMontserratNegra">Quejas y Reclamos (PQR)</h2>
+              <h2 className="subtitulosMontserratNegra">Peticiones, Quejas y Reclamaciones y Sugerencias (PQRS)</h2>
               <hr style={{ width: "80px", margin: "10px auto", borderTop: "3px solid #000", opacity: 1 }} />
               <p className="mt-3 text-muted textoMontserrat" style={{ maxWidth: "600px", margin: "0 auto" }}>
                 Tu opinión es muy importante para nosotros. Por favor, diligencia el siguiente formulario para procesar tu solicitud.
