@@ -78,7 +78,7 @@ const Fashion = () => {
   const enviarCorreo = (e) => {
     e.preventDefault();
 
-    emailjs.send('service_4vlpaaa', 'template_miw2gy2', formData, 'wKZXLQmMaXMgFr8Kj')
+    emailjs.send('service_4vlpaaa', 'template_fn89ojw', formData, 'wKZXLQmMaXMgFr8Kj')
       .then((res) => {
           setModalOpen(true);
           setFormData({ name: '', email: '', message: '' });
@@ -91,10 +91,10 @@ const Fashion = () => {
   const enviarPqr = (e) => {
     e.preventDefault();
 
-    // Usando el mismo servicio y una plantilla (que el usuario deberá configurar o ajustar)
-    emailjs.send('service_4vlpaaa', 'template_miw2gy2', {
+    emailjs.send('service_4vlpaaa', 'template_fn89ojw', {
       name: pqrData.name,
       email: pqrData.email,
+      to_email: 'centrodemonitoreo2011@hotmail.com, cotizacion.seguridadnivel5@gmail.com',
       message: `Tipo: ${pqrData.type}\nTeléfono: ${pqrData.phone}\n\nMensaje: ${pqrData.message}`
     }, 'wKZXLQmMaXMgFr8Kj')
       .then((res) => {
