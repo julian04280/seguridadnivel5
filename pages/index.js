@@ -272,7 +272,8 @@ const Fashion = () => {
         </section>
       </div>
 
-      <RecursosSlider />
+      {/*<RecursosSlider /> */}
+
       
       <div className="section-a-space" id="pqr">
         <section className="pqr-section" style={{ padding: "80px 0", backgroundColor: "#fff" }}>
