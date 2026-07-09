@@ -149,7 +149,7 @@ const Fashion = () => {
                     Somos una empresa especializada en monitoreo 24/7, seguridad física y rastreo vehicular, enfocada en la protección activa de personas, bienes y activos en movimiento.
                   </p>
                   <p className="text-secondary textoMontserrat">
-                    Integramos tecnología de localización en tiempo real with personal capacitado en terreno, lo que nos permite prevenir, reaccionar y actuar de forma inmediata ante cualquier situación.
+                    Integramos tecnología de localización en tiempo real capacitado en terreno, lo que nos permite prevenir, reaccionar y actuar de forma inmediata ante cualquier situación.
                   </p>
                   <p className="text-secondary textoMontserrat">
                     Nuestro compromiso es claro: brindarte control total, visibilidad constante y una respuesta efectiva cuando más lo necesitas.
@@ -272,7 +272,7 @@ const Fashion = () => {
         </section>
       </div>
 
-      {/*<RecursosSlider /> */}
+      <RecursosSlider /> 
 
       
       <div className="section-a-space" id="pqr">
