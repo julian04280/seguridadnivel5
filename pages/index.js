@@ -145,13 +145,13 @@ const Fashion = () => {
                   <h2 className="subtitulosMontserratNegra mt-5">Quienes somos</h2>
                   <hr style={{ width: "50px", borderTop: "3px solid #000", opacity: 1 }} />
                   
-                  <p className="mt-4 text-secondary textoMontserrat">
+                  <p className="letra-quienes-somos-20 mt-4 text-secondary textoMontserrat">
                     Somos una empresa especializada en monitoreo 24/7, seguridad física y rastreo vehicular, enfocada en la protección activa de personas, bienes y activos en movimiento.
                   </p>
-                  <p className="text-secondary textoMontserrat">
+                  <p className="letra-quienes-somos-20 text-secondary textoMontserrat">
                     Integramos tecnología de localización en tiempo real capacitado en terreno, lo que nos permite prevenir, reaccionar y actuar de forma inmediata ante cualquier situación.
                   </p>
-                  <p className="text-secondary textoMontserrat">
+                  <p className="letra-quienes-somos-20 text-secondary textoMontserrat">
                     Nuestro compromiso es claro: brindarte control total, visibilidad constante y una respuesta efectiva cuando más lo necesitas.
                   </p>
 
@@ -199,7 +199,7 @@ const Fashion = () => {
             <div className="title1 text-center mb-5">
               <h2 className="title-inner1">Nuestros Servicios</h2>
               <hr style={{ width: "80px", margin: "10px auto", borderTop: "2px solid #000" }} />
-              <p className="mt-3 text-muted" style={{ maxWidth: "600px", margin: "0 auto" }}>
+              <p className="letra-quienes-somos-20 mt-3 text-muted" style={{ maxWidth: "600px", margin: "0 auto" }}>
                 Nuestro amplio catálogo y versatilidad permite ofrecer un servicio completo de seguridad, innovación y tecnología de vanguardia.
               </p>
             </div>
@@ -219,7 +219,7 @@ const Fashion = () => {
                           />
                       </div>
                       <h4 className="fw-bold">{item.title}</h4>
-                      <p className="text-muted small mt-4">{item.desc}</p>
+                      <p className="letra-quienes-somos-20 text-muted small mt-4">{item.desc}</p>
                     </CardBody>
                   </Card>
                 </Col>
@@ -247,7 +247,7 @@ const Fashion = () => {
               <Col md="12">
                 <h2 className="subtitulosMontserratNegra">Reglamento Interno de Trabajo</h2>
                 <hr style={{ width: "80px", margin: "10px auto", borderTop: "3px solid #000", opacity: 1 }} />
-                <p className="mt-4 text-secondary textoMontserrat">
+                <p className="letra-quienes-somos-20 mt-4 text-secondary textoMontserrat">
                   Consulta y descarga la actualización más reciente de nuestro reglamento interno de trabajo.
                 </p>
                 <div className="mt-4">
@@ -281,7 +281,7 @@ const Fashion = () => {
             <div className="title1 text-center mb-5">
               <h2 className="subtitulosMontserratNegra">Peticiones, Quejas y Reclamaciones y Sugerencias (PQRS)</h2>
               <hr style={{ width: "80px", margin: "10px auto", borderTop: "3px solid #000", opacity: 1 }} />
-              <p className="mt-3 text-muted textoMontserrat" style={{ maxWidth: "600px", margin: "0 auto" }}>
+              <p className="letra-quienes-somos-20 mt-3 text-muted textoMontserrat" style={{ maxWidth: "600px", margin: "0 auto" }}>
                 Tu opinión es muy importante para nosotros. Por favor, diligencia el siguiente formulario para procesar tu solicitud.
               </p>
             </div>

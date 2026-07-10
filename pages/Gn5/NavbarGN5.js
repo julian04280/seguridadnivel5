@@ -35,7 +35,7 @@ const NavbarGN5 = () => {
               <NavLink href="#reglamento" className="text-white subtitulosMontserrat">Reglamento</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#pqr" className="text-white subtitulosMontserrat">PQR</NavLink>
+              <NavLink href="#pqr" className="text-white subtitulosMontserrat">PQRS</NavLink>
             </NavItem>
             <NavItem className="ms-3">
               <NavLink href="#footer" className="text-white p-0">
